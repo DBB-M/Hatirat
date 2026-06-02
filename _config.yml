@@ -29,7 +29,7 @@ metadata: hatirat_cb_ready
 #
 title-field: title
 description-field: description
-format-field: subject
+format-field: format
 latitude-field: latitude
 longitude-field: longitude
 date-field: date
