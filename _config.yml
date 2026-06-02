@@ -1,105 +1,16 @@
-##########
-# TEVARIH — Osmanlı Tarih Eserleri Veri Tabanı
-# CollectionBuilder-GH _config.yml
-##########
-
-##########
-# SITE SETTINGS
-#
-title: Tevarih Veri Tabanı
-tagline: Osmanlı Tarih Eserleri Veri Tabanı
-description: "Franz Babinger'in Osmanlı Tarih Yazarları eserine dayanan dijital katalog. 630 eser, 418 müellif, 194 kütüphane."
-author: DBB-M
-
-##########
-# URL SETTINGS
-#
 url: https://dbb-m.github.io
-baseurl: /tevarih
-source-code: https://github.com/DBB-M/tevarih
+baseurl: /Hatirat
+source-code: https://github.com/DBB-M/Hatirat
 
-##########
-# COLLECTION SETTINGS
-#
-# metadata: CSV dosyasının adı (_data/ klasöründe, .csv uzantısız)
-metadata: babinger_cb
+title: Hatırat Portalı
+tagline: Türk Hatırat Yazarlığı Dijital Kataloğu
+description: "Bu katalog, Türkiye'deki hatırat yazarlığını yazar, tür, dönem ve mekâna göre aranabilir biçimde sunar."
+keywords: hatırat; anı; Türkiye; dijital beşeri bilimler
+author: DBB
 
-##########
-# COLLECTION OBJECT DISPLAY
-#
-# Hangi sütun nesne başlığı olarak kullanılacak
+metadata: hatirat_cb_ready
 
-
-# Hangi sütun açıklama olarak kullanılacak  
-
-
-# Nesne tipi (harita/timeline için önemli) — hepsi metin kaydı
-format-field: yazin_turu
-
-# Harita koordinatları
-latitude-field: latitude
-longitude-field: longitude
-
-# Zaman çizelgesi için tarih alanı
-date-field: telif_tarih_miladi
-
-# Browse/arama için konu ve konum alanları
-subject-field: muellif_adi
-location-field: sehir
-
-# Ülke/bölge
-country-field: ulke
-
-##########
-# JEKYLL SETTINGS
-#
-# Şu dosya/klasörleri site build'inden dışla
-exclude:
-  - CITATION.cff
-  - CODE_OF_CONDUCT.md
-  - CONTRIBUTING.md
-  - LICENSE
-  - README.md
-  - Rakefile
-  - docs/
-  - vendor/
-
-# Jekyll için zorunlu
-plugins:
-  - jekyll-relative-links
-  - jekyll-optional-front-matter
-  - jekyll-readme-index
-  - jekyll-default-layout
-  - jekyll-titles-from-headings
-
-relative_links:
-  enabled: true
-  collections: true
-
-optional_front_matter:
-  remove_originals: true
-
-readme_index:
-  enabled: true
-  remove_originals: true
-  with_frontmatter: true
-
-titles_from_headings:
-  enabled: true
-  strip_title: true
-  collections: true
-
-##########
-# LIQUID
-#
-liquid:
-  error_mode: warn
-  strict_filters: false
-
-##########
-# MARKDOWN
-#
-markdown: kramdown
-kramdown:
-  auto_ids: true
-  toc_levels: 2..3
+organization-name: "DBB - Dijital Beşeri Bilimler"
+organization-link: https://github.com/DBB-M
+organization-logo-banner: /Hatirat/objects/dbb_dariah.jpg
+organization-logo-nav:/Hatirat/objects/dbb_dariah.jpg
