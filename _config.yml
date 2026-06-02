@@ -24,18 +24,17 @@ source-code: https://github.com/DBB-M/Hatirat
 metadata: hatirat_cb_ready
 
 ##########
+##########
 # COLLECTION OBJECT DISPLAY
 #
+title-field: title
+description-field: description
 format-field: subject
-
 latitude-field: latitude
 longitude-field: longitude
-
 date-field: date
-
 subject-field: subject
 location-field: place_of_birth
-
 country-field: period
 
 ##########
@@ -89,9 +88,3 @@ markdown: kramdown
 kramdown:
   auto_ids: true
   toc_levels: 2..3
-
-##########
-# DISPLAY
-#
-title-field: title
-description-field: description
