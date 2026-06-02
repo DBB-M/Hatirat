@@ -1,0 +1,37 @@
+---
+# Keşfet sayfası layout
+layout: page
+custom-foot: js/browse-js.html
+---
+{{ content }}
+<div class="row mb-3 justify-content-center">
+    <div class="col-md-8 text-center">
+        <form role="search" id="browseFilter" onsubmit="submitFilter(); return false;">
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" id="filterTextBox" placeholder="Eser adı, müellif, kütüphane..." aria-label="Ara">
+                <button class="btn btn-primary" type="submit" id="filterButton">Ara</button>
+                <button class="btn btn-outline-secondary filter" onclick="resetFilter(); return false;" data-filter="">Sıfırla</button>
+            </div>
+        </form>
+        <div class="h5 mt-2" id="numberOf" style="color:#7a5020;font-family:'EB Garamond',serif;"></div>
+    </div>
+    <div class="col-md-2">
+        <div class="dropdown">
+            <button class="btn btn-outline-secondary mt-1 dropdown-toggle" type="button" id="browseSortButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sırala: <span id="sortFilter">Rastgele</span>
+            </button>
+            <div class="dropdown-menu browse-sort-menu" aria-labelledby="browseSortButton">
+                <button class="dropdown-item browse-sort-item active" data-filter="random">Rastgele</button>
+                <button class="dropdown-item browse-sort-item" data-filter="title">Eser Adı</button>
+                {% assign sort_options = site.data.config-browse | where_exp: 'i','i.sort_name != nil' %}
+                {% for o in sort_options %}
+                <button class="dropdown-item browse-sort-item" data-filter="{{ o.field | escape }}">{{ o.sort_name }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="loadingIcon" class="text-center">
+    <div class="spinner-border" role="status" style="color:#b8960c;"><span class="visually-hidden">Yükleniyor...</span></div>
+</div>
+<div class="row" id="browseItems"></div>

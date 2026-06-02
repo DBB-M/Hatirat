@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+body { background-color: #faf6ed; color: #1e1408; font-family: 'Crimson Pro', Georgia, serif; font-size: 17px; }
+
+.navbar { background-color: #f2ead8 !important; border-bottom: 2px solid #b8960c !important; }
+.navbar-brand { font-family: 'EB Garamond', serif; color: #4a2e0a !important; font-size: 1.35rem; }
+.navbar-brand:hover { color: #b8960c !important; }
+.nav-link { color: #7a5020 !important; font-family: 'Crimson Pro', serif; padding: 0.75rem 1rem !important; border-bottom: 3px solid transparent; transition: color 0.2s, border-color 0.2s; }
+.nav-link:hover, .nav-link.active { color: #4a2e0a !important; border-bottom-color: #b8960c; }
+
+h1, h2, h3, h4 { font-family: 'EB Garamond', Georgia, serif; color: #4a2e0a; }
+
+.card { background-color: #faf6ed; border: 1px solid #d0b878 !important; border-radius: 4px !important; transition: box-shadow 0.2s, transform 0.2s; }
+.card:hover { box-shadow: 0 4px 16px rgba(74,46,10,0.12); transform: translateY(-2px); }
+.card-title { font-family: 'EB Garamond', serif; color: #4a2e0a; }
+
+.btn-primary, .btn-outline-primary { background-color: #b8960c !important; border-color: #b8960c !important; color: #1e1408 !important; font-family: 'Crimson Pro', serif; border-radius: 3px; }
+.btn-primary:hover, .btn-outline-primary:hover { background-color: #4a2e0a !important; border-color: #4a2e0a !important; color: #f0e6b8 !important; }
+
+.form-control { border-color: #d0b878 !important; background-color: #faf6ed; font-family: 'Crimson Pro', serif; }
+.form-control:focus { border-color: #b8960c !important; box-shadow: 0 0 0 3px rgba(184,150,12,0.15) !important; }
+
+footer { background-color: #f2ead8 !important; border-top: 2px solid #b8960c; font-family: 'Crimson Pro', serif; color: #7a5020 !important; }
+footer a { color: #b8960c !important; }

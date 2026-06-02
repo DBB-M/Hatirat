@@ -1,0 +1,104 @@
+---
+layout: page
+---
+
+<div style="position:relative;margin:-1.5rem -15px 2rem -15px;min-height:340px;background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Naima_Tarihi_detail.jpg/1280px-Naima_Tarihi_detail.jpg');background-size:cover;background-position:center top;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,15,5,0.35) 0%,rgba(26,15,5,0.82) 100%);"></div>
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px;padding:2rem 2.5rem;">
+    <div style="font-size:.72rem;letter-spacing:.15em;color:#c4a95a;text-transform:uppercase;margin-bottom:.5rem;">Franz Babinger · Osmanlı Tarih Yazarları</div>
+    <h1 style="font-family:'EB Garamond',Georgia,serif;font-size:2.8rem;font-weight:600;color:#f5ecd0;margin:0 0 .4rem;text-shadow:0 2px 8px rgba(0,0,0,0.5);line-height:1.1;">Tevarih Veri Tabanı</h1>
+    <p style="color:#d4b878;font-size:1.05rem;margin:0 0 1.2rem;letter-spacing:.03em;">Osmanlı tarih yazarlığının dijital kataloğu</p>
+    <div style="display:flex;gap:2rem;">
+      <div style="text-align:center;"><div style="font-family:'EB Garamond',serif;font-size:1.8rem;color:#c4a95a;line-height:1;">630</div><div style="font-size:.68rem;color:#a08050;letter-spacing:.08em;text-transform:uppercase;">Eser</div></div>
+      <div style="text-align:center;"><div style="font-family:'EB Garamond',serif;font-size:1.8rem;color:#c4a95a;line-height:1;">418</div><div style="font-size:.68rem;color:#a08050;letter-spacing:.08em;text-transform:uppercase;">Müellif</div></div>
+      <div style="text-align:center;"><div style="font-family:'EB Garamond',serif;font-size:1.8rem;color:#c4a95a;line-height:1;">194</div><div style="font-size:.68rem;color:#a08050;letter-spacing:.08em;text-transform:uppercase;">Kütüphane</div></div>
+      <div style="text-align:center;"><div style="font-family:'EB Garamond',serif;font-size:1.8rem;color:#c4a95a;line-height:1;">20</div><div style="font-size:.68rem;color:#a08050;letter-spacing:.08em;text-transform:uppercase;">Ülke</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+
+    {% include index/description.html %}
+
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;border-bottom:2px solid #b8960c;padding-bottom:.4rem;">
+      <span style="font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:600;color:#4a2e0a;letter-spacing:.06em;text-transform:uppercase;">Öne Çıkan Çalışmalar</span>
+      <a href="{{ '/browse.html' | relative_url }}" style="font-size:.8rem;color:#b8960c;text-decoration:none;border:1px solid #d0b878;padding:3px 10px;border-radius:3px;">Tümünü Gör →</a>
+    </div>
+
+    <div class="row g-3">
+      {% assign featured = site.data.babinger_cb | sample: 6 %}
+      {% for item in featured %}
+
+      {% assign tur_renk = "#b8960c" %}
+      {% assign tur_bg = "#fdf4dc" %}
+      {% if item.yazin_turu == "Manzum" %}
+        {% assign tur_renk = "#0f6e56" %}
+        {% assign tur_bg = "#e1f5ee" %}
+      {% elsif item.yazin_turu == "Mensur, Manzum" %}
+        {% assign tur_renk = "#534ab7" %}
+        {% assign tur_bg = "#eeedfe" %}
+      {% endif %}
+
+      <div class="col-md-6">
+        <div style="background:#fff;border:1px solid #e0d4b8;border-radius:8px;overflow:hidden;height:100%;display:flex;flex-direction:column;transition:box-shadow .2s;">
+          <div style="height:4px;background:{{ tur_renk }};"></div>
+          <div style="padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column;">
+            <div style="margin-bottom:.6rem;">
+              {% if item.yazin_turu %}
+              <span style="font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:{{ tur_renk }};background:{{ tur_bg }};padding:2px 8px;border-radius:20px;">{{ item.yazin_turu }}</span>
+              {% endif %}
+            </div>
+            <div style="font-family:'EB Garamond',Georgia,serif;font-size:1.05rem;font-weight:600;color:#1e1408;line-height:1.35;margin-bottom:.7rem;flex:1;">
+              {{ item.title | truncate: 60 }}
+            </div>
+            <div style="font-size:.8rem;color:#7a5020;line-height:1.7;border-top:1px solid #ede3cc;padding-top:.6rem;">
+              {% if item.muellif_adi %}<div>Müellif: <span style="color:#2a1f0e;">{{ item.muellif_adi | truncate: 40 }}</span></div>{% endif %}
+              {% if item.padisah_donemi %}<div>Dönem: <span style="color:#2a1f0e;">{{ item.padisah_donemi }}</span></div>{% endif %}
+              {% if item.kutupane_koleksiyon %}<div>Kütüphane: <span style="color:#2a1f0e;">{{ item.kutupane_koleksiyon | truncate: 35 }}</span></div>{% endif %}
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;">
+              <span style="font-size:.8rem;color:#a08050;">{{ item.telif_tarih_miladi }}</span>
+              <a href="{{ '/item.html' | relative_url }}?id={{ item.objectid }}" style="font-size:.8rem;color:#b8960c;text-decoration:none;font-weight:500;">Detay →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <div class="col-md-4">
+
+    <div class="card mb-3">
+      <div class="card-body py-3">
+        <h5 class="card-title mb-3" style="font-family:'EB Garamond',serif;color:#4a2e0a;border-bottom:1px solid #d0b878;padding-bottom:.5rem;">İstatistikler</h5>
+        <div class="row text-center g-2">
+          <div class="col-6"><div style="background:#f2ead8;border:1px solid #d0b878;border-radius:4px;padding:.6rem;"><div style="font-family:'EB Garamond',serif;font-size:1.6rem;color:#4a2e0a;line-height:1;">630</div><div style="font-size:.72rem;color:#7a5020;">Eser</div></div></div>
+          <div class="col-6"><div style="background:#f2ead8;border:1px solid #d0b878;border-radius:4px;padding:.6rem;"><div style="font-family:'EB Garamond',serif;font-size:1.6rem;color:#4a2e0a;line-height:1;">418</div><div style="font-size:.72rem;color:#7a5020;">Müellif</div></div></div>
+          <div class="col-6"><div style="background:#f2ead8;border:1px solid #d0b878;border-radius:4px;padding:.6rem;"><div style="font-family:'EB Garamond',serif;font-size:1.6rem;color:#4a2e0a;line-height:1;">194</div><div style="font-size:.72rem;color:#7a5020;">Kütüphane</div></div></div>
+          <div class="col-6"><div style="background:#f2ead8;border:1px solid #d0b878;border-radius:4px;padding:.6rem;"><div style="font-family:'EB Garamond',serif;font-size:1.6rem;color:#4a2e0a;line-height:1;">20</div><div style="font-size:.72rem;color:#7a5020;">Ülke</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-body py-3">
+        <h5 class="card-title mb-2" style="font-family:'EB Garamond',serif;color:#4a2e0a;border-bottom:1px solid #d0b878;padding-bottom:.5rem;">Zaman Aralığı</h5>
+        <p class="mb-1" style="font-size:.9rem;color:#7a5020;">İlk eser: <strong style="color:#4a2e0a;">1389</strong></p>
+        <p class="mb-2" style="font-size:.9rem;color:#7a5020;">Son eser: <strong style="color:#4a2e0a;">1925</strong></p>
+        <a href="{{ '/timeline.html' | relative_url }}" class="btn btn-primary btn-sm">Kronoloji →</a>
+      </div>
+    </div>
+
+    {% include index/featured-terms.html field="muellif_adi" title="Öne Çıkan Müellifler" btn-color="primary" %}
+    {% include index/featured-terms.html field="sehir" title="Öne Çıkan Şehirler" btn-color="outline-secondary" %}
+
+  </div>
+
+  <div class="col-md-12 mt-2">
+    {% include index/data-download.html %}
+  </div>
+</div>
