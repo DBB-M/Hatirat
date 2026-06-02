@@ -10,3 +10,5 @@ period,Dönem,true,true
 place_of_birth,Doğum Yeri,,
 important_names,Geçen İsimler,,
 important_institutions,Geçen Kurumlar,,
+description,Açıklama,,
+veriyi_giren,Veriyi Giren,,
