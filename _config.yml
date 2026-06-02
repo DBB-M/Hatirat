@@ -93,5 +93,5 @@ kramdown:
 ##########
 # DISPLAY
 #
-title-field: filename
+title-field: title
 description-field: description
