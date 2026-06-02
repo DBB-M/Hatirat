@@ -82,118 +82,95 @@ function displayItem(record, prev_id, next_id, compound_object) {
     /* function to add item metadata */
     /* function to add item metadata - YENİ TASARIM */
     function generateMetadata(item) {
+    var groups = [
+        {
+            title: "Eser Bilgileri",
+            fields: ["title","creator","date","publisher"]
+        },
+        {
+            title: "Tür & Dönem",
+            fields: ["subject","subject_2","yontem","period"]
+        },
+        {
+            title: "Kişiler & Kurumlar",
+            fields: ["important_names","important_institutions"]
+        },
+        {
+            title: "Coğrafya",
+            fields: ["place_of_birth","latitude","longitude"]
+        },
+        {
+            title: "Açıklama",
+            fields: ["description"]
+        },
+        {
+            title: "Kaynak",
+            fields: ["veriyi_giren"]
+        }
+    ];
 
-        // Alan grupları
-        var groups = [
-            {
-                title: "Eser Bilgileri",
-                fields: ["title","muellif_adi","muellif_olum_tarihi","padisah_donemi","telif_tarih_miladi","telif_tarih_hicri","telif_basim","istinsah_tarihi"]
-            },
-            {
-                title: "Tür & Dil",
-                fields: ["eser_dili","yazin_turu","eser_alt_turu","yazi_turu","cilt_sayisi"]
-            },
-            {
-                title: "Konum & Kütüphane",
-                fields: ["kutupane_koleksiyon","alt_koleksiyon_numara","su_anda_kutupane","ulke","sehir","yazildigi_yer","istinsah_yeri"]
-            },
-            {
-                title: "Bağlantılı Eserler",
-                fields: ["baglanti_turu","baglantili_eser_adi","baglantili_eser_yazari","baglantili_eser_tarihi","baglantili_eser_dili"]
-            },
-            {
-                title: "İçerik & Kapsam",
-                fields: ["takdim_hediye","tarihsel_kapsam","tematik_kapsam","notlar","arastirmaci_notu"]
-            },
-            {
-                title: "Kaynak",
-                fields: ["arastirmaci","sayfa_no"]
-            }
-        ];
+    var labels = {
+        "title": "Eser Adı",
+        "creator": "Yazar/Editör",
+        "date": "Yayın Yılı",
+        "publisher": "Yayınevi",
+        "subject": "Tür",
+        "subject_2": "Alt Tür",
+        "yontem": "Anlatı Biçimi",
+        "period": "Dönem",
+        "important_names": "Geçen İsimler",
+        "important_institutions": "Geçen Kurumlar",
+        "place_of_birth": "Doğum Yeri",
+        "latitude": "Enlem",
+        "longitude": "Boylam",
+        "description": "Açıklama",
+        "veriyi_giren": "Veriyi Giren"
+    };
 
-        // Alan etiketleri
-        var labels = {
-            "title": "Eser Adı",
-            "muellif_adi": "Müellif",
-            "muellif_olum_tarihi": "Müellif Ölüm Tarihi",
-            "padisah_donemi": "Padişah Dönemi",
-            "telif_tarih_miladi": "Telif Tarihi (Miladi)",
-            "telif_tarih_hicri": "Telif Tarihi (Hicri)",
-            "telif_basim": "Telif / Basım",
-            "istinsah_tarihi": "İstinsah Tarihi",
-            "eser_dili": "Eser Dili",
-            "yazin_turu": "Yazın Türü",
-            "eser_alt_turu": "Eser Alt Türü",
-            "yazi_turu": "Yazı Türü",
-            "cilt_sayisi": "Cilt Sayısı",
-            "kutupane_koleksiyon": "Kütüphane / Koleksiyon",
-            "alt_koleksiyon_numara": "Koleksiyon Numarası",
-            "su_anda_kutupane": "Şu Anda Bulunduğu Kütüphane",
-            "ulke": "Ülke",
-            "sehir": "Şehir",
-            "yazildigi_yer": "Yazıldığı Yer",
-            "istinsah_yeri": "İstinsah Yeri",
-            "baglanti_turu": "Bağlantı Türü",
-            "baglantili_eser_adi": "Bağlantılı Eser",
-            "baglantili_eser_yazari": "Bağlantılı Eser Yazarı",
-            "baglantili_eser_tarihi": "Bağlantılı Eser Tarihi",
-            "baglantili_eser_dili": "Bağlantılı Eser Dili",
-            "takdim_hediye": "Takdim / Hediye",
-            "tarihsel_kapsam": "Tarihsel Kapsam",
-            "tematik_kapsam": "Tematik Kapsam",
-            "notlar": "Notlar",
-            "arastirmaci_notu": "Araştırmacı Notu",
-            "arastirmaci": "Araştırmacı",
-            "sayfa_no": "Sayfa No"
-        };
+    var browseFields = ["subject","subject_2","yontem","period"];
 
-        // Browse link alanları
-        var browseFields = ["muellif_adi","padisah_donemi","eser_dili","yazin_turu","kutupane_koleksiyon","ulke","sehir","baglanti_turu"];
+    var html = '<div class="row g-3">';
 
-        var html = '<div class="row g-3">';
+    for (var g = 0; g < groups.length; g++) {
+        var group = groups[g];
+        var hasData = false;
+        for (var k = 0; k < group.fields.length; k++) {
+            if (item[group.fields[k]]) { hasData = true; break; }
+        }
+        if (!hasData) continue;
 
-        for (var g = 0; g < groups.length; g++) {
-            var group = groups[g];
-            // Grupta dolu alan var mı?
-            var hasData = false;
-            for (var k = 0; k < group.fields.length; k++) {
-                if (item[group.fields[k]]) { hasData = true; break; }
-            }
-            if (!hasData) continue;
+        html += '<div class="col-md-6"><div style="background:#fff;border:1px solid #e0d4b8;border-radius:8px;padding:1rem;height:100%;">';
+        html += '<div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#b8960c;font-weight:600;margin-bottom:.7rem;padding-bottom:.4rem;border-bottom:1px solid #e8d8b0;">' + group.title + '</div>';
+        html += '<table style="width:100%;font-size:.85rem;">';
 
-            html += '<div class="col-md-6"><div style="background:#fff;border:1px solid #e0d4b8;border-radius:8px;padding:1rem;height:100%;">';
-            html += '<div style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#b8960c;font-weight:600;margin-bottom:.7rem;padding-bottom:.4rem;border-bottom:1px solid #e8d8b0;">' + group.title + '</div>';
-            html += '<table style="width:100%;font-size:.85rem;">';
+        for (var k = 0; k < group.fields.length; k++) {
+            var f = group.fields[k];
+            if (!item[f]) continue;
+            var label = labels[f] || f;
+            var val = item[f];
 
-            for (var k = 0; k < group.fields.length; k++) {
-                var f = group.fields[k];
-                if (!item[f]) continue;
-                var label = labels[f] || f;
-                var val = item[f];
-
-                // Browse link mi?
-                if (browseFields.indexOf(f) !== -1) {
-                    var parts = val.split(";");
-                    var linked = "";
-                    for (var p = 0; p < parts.length; p++) {
-                        var t = parts[p].trim();
-                        if (t) linked += '<a href="/tevarih/browse.html#' + encodeURIComponent(t) + '" style="color:#b8960c;text-decoration:none;">' + t + '</a> ';
-                    }
-                    val = linked;
+            if (browseFields.indexOf(f) !== -1) {
+                var parts = val.split(";");
+                var linked = "";
+                for (var p = 0; p < parts.length; p++) {
+                    var t = parts[p].trim();
+                    if (t) linked += '<a href="{{ "/browse.html" | relative_url }}#' + encodeURIComponent(t) + '" style="color:#b8960c;text-decoration:none;">' + t + '</a> ';
                 }
-
-                html += '<tr style="border-bottom:1px solid #f5eed8;">';
-                html += '<td style="color:#7a5020;padding:.3rem .5rem .3rem 0;white-space:nowrap;vertical-align:top;width:40%;">' + label + '</td>';
-                html += '<td style="color:#1e1408;padding:.3rem 0;vertical-align:top;">' + val + '</td>';
-                html += '</tr>';
+                val = linked;
             }
 
-            html += '</table></div></div>';
+            html += '<tr style="border-bottom:1px solid #f5eed8;">';
+            html += '<td style="color:#7a5020;padding:.3rem .5rem .3rem 0;white-space:nowrap;vertical-align:top;width:40%;">' + label + '</td>';
+            html += '<td style="color:#1e1408;padding:.3rem 0;vertical-align:top;">' + val + '</td>';
+            html += '</tr>';
         }
 
-        html += '</div>';
-        return html;
-    };
+        html += '</table></div></div>';
+    }
+
+    html += '</div>';
+    return html;
+}
 
     /* function to add download, timeline, and map links */
     function addButtons(item) {
