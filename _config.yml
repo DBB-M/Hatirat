@@ -1,5 +1,5 @@
 ##########
-# HATIRAT — Türk Hatırat Yazarlığı Dijital Kataloğu
+# HATIRAT — Hatıratlar Dijital Kataloğu
 # CollectionBuilder _config.yml
 ##########
 
@@ -8,7 +8,7 @@
 #
 title: Hatırat Portalı
 tagline: Türk Hatırat Yazarlığı Dijital Kataloğu
-description: "663 eseri kapsayan bu katalog, Türk hatırat yazarlığını yazar, tür, dönem ve mekâna göre aranabilir biçimde sunar."
+description: "Bu katalog, Türkiye'deki hatırat yazarlığını yazar, tür, dönem ve mekâna göre aranabilir biçimde sunar."
 author: DBB-M
 
 ##########
