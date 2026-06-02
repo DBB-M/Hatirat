@@ -1,9 +1,5 @@
-field,display_name,btn,hidden,sort_name
-title,Eser Adı,,,Eser Adı
-muellif_adi,Müellif,,,Müellif
-telif_tarih_miladi,Tarih,,,Tarih
-kutupane_koleksiyon,Kütüphane,,,
-ulke,Ülke,,,
-eser_dili,Dil,,,
-padisah_donemi,Padişah Dönemi,,,
-eser_alt_turu,Eser Alt Türü,true,,
+field,label,btn,hidden
+subject,Tür,,
+period,Dönem,,
+yontem,Anlatı Biçimi,,
+creator,Yazar,,
