@@ -89,3 +89,5 @@ kramdown:
   auto_ids: true
   toc_levels: 2..3
   lib-assets: /Hatirat/assets/lib
+object-location: 
+image-thumb:
