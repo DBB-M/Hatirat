@@ -89,3 +89,9 @@ markdown: kramdown
 kramdown:
   auto_ids: true
   toc_levels: 2..3
+
+##########
+# DISPLAY
+#
+title-field: filename
+description-field: description
