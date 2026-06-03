@@ -132,15 +132,19 @@
         } else {
             thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-default }}.svg';
         }    
-        /* create popup content */
+         /* create popup content */
         var popupTemplate = '<h2 class="h4"><a class="text-dark" href="' + itemHref + '">' +
-            feature.properties.title + '</a></h2><div class="text-center"><a href="' + itemHref + 
-            '" ><img class="map-thumb img-thumb" src="' +  thumbSrc + '" alt="item thumbnail"></a></div><p>';
+            feature.properties.title + '</a></h2>';
+        if (feature.properties.creator) {
+            popupTemplate += '<p class="mb-1"><small>' + feature.properties.creator + '</small></p>';
+        }
+        popupTemplate += '<p>';
         /* add metadata fields */
         {% for f in fields %}{% if f.display_name %}
         if (feature.properties[{{ f.field | jsonify }}]) {
             popupTemplate += '<strong>{{ f.display_name }}:</strong> ' + feature.properties[{{ f.field | jsonify }}] + '<br>'; 
         }
+        {% endif %}{% endfor %}
         {% endif %}{% endfor %}
         /* add object link button to popup */
         popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >View Item</a></div>';
