@@ -1,36 +1,28 @@
 ##########
-# TEVARIH - theme.yml
-# _data/theme.yml dosyasının içine yapıştırın
+# HATIRAT - theme.yml
 ##########
 
 ##########
 # HOME PAGE
 #
-# Anasayfa hero görseli — Wikimedia'dan açık lisanslı Naima el yazması
-featured-image: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Naima_Tarihi_ms.jpg/1280px-Naima_Tarihi_ms.jpg
-
+featured-image:
 ##########
 # NAVBAR
 #
-# Açık krem/altın navbar
 navbar-color: navy
 navbar-background: custom
-
 ##########
 # BROWSE
 #
 browse-buttons: false
-
 ##########
 # SUBJECTS / LOCATIONS TAG CLOUDS
 #
-subjects-fields: muellif_adi;yazin_turu;eser_dili
+subjects-fields: subject;period;yontem
 subjects-min: 1
 subjects-stopwords:
-
-locations-field: sehir
+locations-field: place_of_birth
 locations-min: 1
-
 ##########
 # MAP
 #
@@ -39,65 +31,16 @@ map-cluster: true
 map-cluster-radius: 25
 map-search: true
 map-search-fuzziness: 0.35
-auto-center-map: false
-latitude: 48
-longitude: 25
-map-zoom: 4
-zoom-level: 4
-
+auto-center-map: true
+latitude: 39
+longitude: 35
+zoom-level: 6
 ##########
 # TIMELINE
 #
 timeline-field: date
-year-nav-increment: 50
-
+year-nav-increment: 25
 ##########
 # FONTS
 #
-# Crimson Pro: okunabilir, tarihi belge hissini veren serif
-# font-cdn: "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
 base-font-size: 17px
-
-##########
-# METADATA DISPLAY
-#
-# Eser detay sayfasında gösterilecek alanlar
-metadata-display:
-  - field: muellif_adi
-    label: Müellif
-  - field: muellif_olum_tarihi
-    label: Müellif Ölüm Tarihi
-  - field: padisah_donemi
-    label: Padişah Dönemi
-  - field: telif_tarih_miladi
-    label: Telif Tarihi (Miladi)
-  - field: telif_tarih_hicri
-    label: Telif Tarihi (Hicri)
-  - field: eser_dili
-    label: Eser Dili
-  - field: yazin_turu
-    label: Yazın Türü
-  - field: eser_alt_turu
-    label: Eser Alt Türü
-  - field: kutupane_koleksiyon
-    label: Kütüphane / Koleksiyon
-  - field: alt_koleksiyon_numara
-    label: Koleksiyon Numarası
-  - field: ulke
-    label: Ülke
-  - field: sehir
-    label: Şehir
-  - field: baglanti_turu
-    label: Bağlantı Türü
-  - field: baglantili_eser_adi
-    label: Bağlantılı Eser
-  - field: takdim_hediye
-    label: Takdim / Hediye
-  - field: tarihsel_kapsam
-    label: Tarihsel Kapsam
-  - field: tematik_kapsam
-    label: Tematik Kapsam
-  - field: notlar
-    label: Notlar
-  - field: arastirmaci
-    label: Araştırmacı
