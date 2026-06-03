@@ -31,7 +31,7 @@ map-cluster: true
 map-cluster-radius: 25
 map-search: true
 map-search-fuzziness: 0.35
-auto-center-map: true
+auto-center-map: false
 latitude: 39
 longitude: 35
 zoom-level: 6
