@@ -452,16 +452,9 @@ function displayItem(record, prev_id, next_id, compound_object) {
                 </div>
             </div>
         `;
-    } else {
-        itemContent = `
-            <div class="card mb-4 text-center">
-                ${itemImage}
-                <div class="card-body">
-                    ${itemLink}
-                </div>
-            </div>
-        `;
-    }
+   } else {
+    itemContent = itemLink ? `<div class="mb-3">${itemLink}</div>` : '';
+}
     document.getElementById("item-content").innerHTML = itemContent;
     
     /* add item metadata */
