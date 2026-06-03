@@ -17,41 +17,40 @@ var items = [
 function makeCard(obj) {
     var itemHref = "{{ '/item.html' | relative_url | append: '?id=' }}" + obj.link;
 
-    // Yazın türüne göre renk
-    var bandColor = "#b8960c";
-    var tagBg = "#fdf4dc";
-    var tagColor = "#7a5020";
-    if (obj.yazin_turu === "Manzum") {
-        bandColor = "#0f6e56"; tagBg = "#e1f5ee"; tagColor = "#085041";
-    } else if (obj.yazin_turu === "Mensur, Manzum") {
+    var subject = obj.subject ? obj.subject.split(";")[0] : "";
+    var bandColor = "#2a7f8c";
+    var tagBg = "#e0f4f6";
+    var tagColor = "#1a5f6a";
+    if (subject === "Devlet Erkânı ve Asker Hatıratları") {
+        bandColor = "#7a3030"; tagBg = "#faeaea"; tagColor = "#5a1a1a";
+    } else if (subject === "Edebiyat Hatıratları") {
         bandColor = "#534ab7"; tagBg = "#eeedfe"; tagColor = "#3c3489";
+    } else if (subject === "Sanatçı Hatıratları") {
+        bandColor = "#0f6e56"; tagBg = "#e1f5ee"; tagColor = "#085041";
     }
 
-    var yazinTur = obj.yazin_turu || obj.format || "";
-    var tag = yazinTur ? '<span style="font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:' + tagColor + ';background:' + tagBg + ';padding:2px 9px;border-radius:20px;">' + yazinTur + '</span>' : '';
+    var tag = subject ? '<span style="font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:' + tagColor + ';background:' + tagBg + ';padding:2px 9px;border-radius:20px;">' + subject + '</span>' : '';
 
     var title = obj.title ? obj.title : "(Başlıksız)";
     var shortTitle = title.length > 65 ? title.substring(0, 62) + "…" : title;
 
     var meta = "";
-    if (obj.muellif_adi) meta += '<div>Müellif: <span style="color:#1e1408;">' + obj.muellif_adi.substring(0, 45) + '</span></div>';
-    if (obj.padisah_donemi) meta += '<div>Dönem: <span style="color:#1e1408;">' + obj.padisah_donemi + '</span></div>';
-    if (obj.kutupane_koleksiyon) meta += '<div>Kütüphane: <span style="color:#1e1408;">' + obj.kutupane_koleksiyon.substring(0, 38) + '</span></div>';
-    if (obj.ulke) meta += '<div>Ülke: <span style="color:#1e1408;">' + obj.ulke + '</span></div>';
+    if (obj.creator) meta += '<div>Yazar: <span style="color:#1e1408;">' + obj.creator.substring(0, 45) + '</span></div>';
+    if (obj.period) meta += '<div>Dönem: <span style="color:#1e1408;">' + obj.period.split(";")[0] + '</span></div>';
 
-    var tarih = obj.telif_tarih_miladi || obj.date || "";
+    var tarih = obj.date || "";
 
     var card = '<div class="item col-lg-4 col-md-6 col-sm-12 mb-3">';
-    card += '<div style="background:#fff;border:1px solid #e0d4b8;border-radius:8px;overflow:hidden;height:100%;display:flex;flex-direction:column;">';
+    card += '<div style="background:#fff;border:1px solid #c8dfe0;border-radius:8px;overflow:hidden;height:100%;display:flex;flex-direction:column;">';
     card += '<div style="height:4px;background:' + bandColor + ';"></div>';
     card += '<div style="padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column;">';
     card += '<div style="margin-bottom:.55rem;">' + tag + '</div>';
     card += '<div style="font-family:\'EB Garamond\',Georgia,serif;font-size:1.05rem;font-weight:600;color:#1e1408;line-height:1.35;margin-bottom:.7rem;flex:1;">';
     card += '<a href="' + itemHref + '" style="color:#1e1408;text-decoration:none;">' + shortTitle + '</a></div>';
-    card += '<div style="font-size:.8rem;color:#7a5020;line-height:1.75;border-top:1px solid #ede3cc;padding-top:.6rem;">' + meta + '</div>';
+    card += '<div style="font-size:.8rem;color:#2a5f60;line-height:1.75;border-top:1px solid #d0e8ea;padding-top:.6rem;">' + meta + '</div>';
     card += '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;">';
-    card += '<span style="font-size:.8rem;color:#a08050;">' + tarih + '</span>';
-    card += '<a href="' + itemHref + '" style="font-size:.82rem;color:#b8960c;text-decoration:none;font-weight:500;">Detay →</a>';
+    card += '<span style="font-size:.8rem;color:#4a9098;">' + tarih + '</span>';
+    card += '<a href="' + itemHref + '" style="font-size:.82rem;color:#2a7f8c;text-decoration:none;font-weight:500;">Detay →</a>';
     card += '</div></div></div></div>';
     return card;
 }
