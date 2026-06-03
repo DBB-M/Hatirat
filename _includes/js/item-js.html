@@ -149,14 +149,15 @@ function displayItem(record, prev_id, next_id, compound_object) {
             var val = item[f];
 
             if (browseFields.indexOf(f) !== -1) {
-                var parts = val.split(";");
-                var linked = "";
-                for (var p = 0; p < parts.length; p++) {
-                    var t = parts[p].trim();
-                    if (t) linked += '<a href="{{ "/browse.html" | relative_url }}#' + encodeURIComponent(t) + '" style="color:#b8960c;text-decoration:none;">' + t + '</a> ';
-                }
-                val = linked;
-            }
+    var separator = (f === "important_names" || f === "important_institutions") ? "," : ";";
+    var parts = val.split(separator);
+    var linked = "";
+    for (var p = 0; p < parts.length; p++) {
+        var t = parts[p].trim();
+        if (t) linked += '<a href="{{ "/browse.html" | relative_url }}#' + encodeURIComponent(t) + '" style="color:#b8960c;text-decoration:none;">' + t + '</a> ';
+    }
+    val = linked;
+}
 
             html += '<tr style="border-bottom:1px solid #f5eed8;">';
             html += '<td style="color:#7a5020;padding:.3rem .5rem .3rem 0;white-space:nowrap;vertical-align:top;width:40%;">' + label + '</td>';
