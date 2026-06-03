@@ -1,0 +1,52 @@
+{%- assign items = site.data[site.metadata] -%}
+<script>
+var rawItems = [
+    {% for item in items %}
+    {
+        "creator": {{ item.creator | default: "" | jsonify }},
+        "important_names": {{ item.important_names | default: "" | jsonify }},
+        "important_institutions": {{ item.important_institutions | default: "" | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+];
+
+function countFreq(items, field, separator) {
+    var freq = {};
+    items.forEach(function(item) {
+        var val = item[field];
+        if (!val) return;
+        val.split(separator).forEach(function(v) {
+            v = v.trim();
+            if (v) freq[v] = (freq[v] || 0) + 1;
+        });
+    });
+    return freq;
+}
+
+function makeCloud(freqMap, containerId, browseField) {
+    var entries = Object.entries(freqMap).sort(function(a,b){ return b[1]-a[1]; });
+    if (entries.length === 0) {
+        document.getElementById(containerId).innerHTML = '<p class="text-muted">Veri yok.</p>';
+        return;
+    }
+    var max = entries[0][1];
+    var min = entries[entries.length-1][1];
+    var html = '';
+    entries.forEach(function(e) {
+        var name = e[0], count = e[1];
+        var size = min === max ? 1.2 : 0.8 + ((count - min) / (max - min)) * 2.2;
+        var opacity = 0.5 + ((count - min) / (max - min || 1)) * 0.5;
+        var href = "{{ '/browse.html' | relative_url }}#" + encodeURIComponent(name);
+        html += '<a href="' + href + '" title="' + count + ' eser" style="font-size:' + size.toFixed(2) + 'rem;color:#2a7f8c;opacity:' + opacity.toFixed(2) + ';text-decoration:none;margin:0 .4rem;">' + name + '</a> ';
+    });
+    document.getElementById(containerId).innerHTML = html;
+}
+
+var yazarFreq = countFreq(rawItems, "creator", ";");
+var kisiFreq = countFreq(rawItems, "important_names", ",");
+var kurumFreq = countFreq(rawItems, "important_institutions", ",");
+
+makeCloud(yazarFreq, "cloud-yazarlar", "creator");
+makeCloud(kisiFreq, "cloud-kisiler", "important_names");
+makeCloud(kurumFreq, "cloud-kurumlar", "important_institutions");
+</script>
