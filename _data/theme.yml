@@ -26,7 +26,7 @@ locations-min: 1
 ##########
 # MAP
 #
-map-base: Esri_WorldStreetMap
+map-base: OpenStreetMap_Mapnik
 map-cluster: true
 map-cluster-radius: 25
 map-search: true
