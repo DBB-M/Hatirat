@@ -154,7 +154,7 @@ function displayItem(record, prev_id, next_id, compound_object) {
     var linked = "";
     for (var p = 0; p < parts.length; p++) {
         var t = parts[p].trim();
-        if (t) linked += '<a href="{{ "/browse.html" | relative_url }}#' + encodeURIComponent(t) + '" style="color:#b8960c;text-decoration:none;">' + t + '</a> ';
+        if (t) linked += '<a href="{{ "/browse.html" | relative_url }}#' + encodeURIComponent(t) + '" style="color:#2a7f8c;text-decoration:none;margin-right:2px;">' + t + '</a>' + (p < parts.length - 1 ? '<span style="color:#aaa;">, </span>' : ' ');
     }
     val = linked;
 }
