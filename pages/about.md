@@ -1,27 +1,63 @@
 ---
-title: About
-layout: about
+title: Hakkında
+layout: page-narrow
 permalink: /about.html
-# include CollectionBuilder info at bottom
-credits: true
-# Edit the markdown on in this file to describe your collection
-# Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="https://cdil.lib.uidaho.edu/images/palouse_sm.jpg" %}
+## Hatırat Envanteri Hakkında
 
-{% include feature/nav-menu.html sections="About the Collection;About the About Page" %}
+Hatıratlar, kişisel tanıklıklar üzerinden geçmişe bakma imkânı sunar. Ancak bu metinler yalnızca bireysel hafızayı değil, aynı zamanda dönemin kurumlarını, gündelik hayatını, meslek dünyasını, toplumsal ilişkilerini ve kültürel dönüşümlerini de görünür kılar.
 
-## About the Collection
+Bu dijital envanter, hatıratları tek tek bibliyografik kayıtlar olmaktan çıkarıp karşılaştırılabilir, aranabilir ve analiz edilebilir bir veri alanına dönüştürmeyi hedefler. Böylece kullanıcılar hem belirli bir esere ulaşabilir hem de daha geniş tematik eğilimleri takip edebilir.
 
-This site is generated using [CollectionBuilder-GH](https://collectionbuilding.github.io/gh/), a project to create a free and simple digital collection using [GitHub Pages](https://pages.github.com/) from: 
+Hatırat Envanteri, Türkiye'de yayımlanmış hatırat kitaplarını araştırmacılar, öğrenciler ve meraklı okurlar için daha erişilebilir hale getirmeyi amaçlayan dijital bir envanter çalışmasıdır. Platform, farklı temalara ait hatıratları tek bir yerde görmeyi, karşılaştırmayı ve ön analiz yapmayı kolaylaştırır. Bu çalışma özellikle hatıratları tarih, edebiyat, sosyoloji, mimarlık, sinema, eğitim, toplumsal cinsiyet ve kültürel çalışmalar gibi farklı alanlarda kaynak olarak kullanmak isteyenler için tasarlanmıştır. Kullanıcılar envanter üzerinden hatıratları konu, kişi, kurum, dönem, yayım bilgisi ve anlatı türü gibi ölçütlerle inceleyebilir.
 
-- a CSV of collection metadata
-- a folder of JPG images or PDF documents
+## Envanter Nasıl Hazırlandı?
 
-The template repository features four objects from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital). 
+Envanterin temelini, son yüzyılda kitap olarak yayımlanmış hatıratlara ilişkin akademik bibliyografya çalışmaları oluşturur. Bu çalışmalarda yer alan bibliyografik listeler veri setine dönüştürülmüş; her eser için yazar adı, eser adı, yayım yılı, yayım yeri, yayınevi ve ilgili kaynak bilgileri kaydedilmiştir. Bibliyografik bilgilere ek olarak, araştırmacıların tematik örüntüleri daha kolay görebilmesi için "önemli kişiler" ve "önemli kurumlar" alanları da eklenmiştir. Böylece belirli kişiler, kurumlar, meslek grupları, tarihsel olaylar veya toplumsal konular etrafında oluşan hatırat kümelerini izlemek mümkün hale gelmiştir.
 
-For full details of creating your own collection site, visit [CollectionBuilder Documentation](https://collectionbuilder.github.io/cb-docs/)!
+Hatıratlar iki ana eksende sınıflandırılmıştır: konu ve anlatı/yöntem türü. Konuya göre sınıflandırmada akademik bibliyografyalarda öne çıkan alanlar ile Yılmaz'ın (2024) doktora çalışmasında kullandığı tasniften yararlanılmıştır.
 
-<!-- IMPORTANT!!! DELETE this comment and the include below when you are finished editing this page for your collection. The include below introduces about page features. They will show up on your collection's about page until you delete it.  -->
-{% include cb/about_the_about.md %} 
+**Konu başlıklarından bazıları şunlardır:**
+
+Aile odaklı hatıratlar · Azınlıkların yaşamını konu edinen hatıratlar · Aydın hatıratları · Beyaz yakalı hatıratları · Bürokrasi hatıratları · Devlet erkânı ve asker hatıratları · Dini ve fikir önderleri hatıratları · Edebiyat hatıratları · Eğitimle ilgili hatıratlar · Gazeteci hatıratları · Kadın hatıratları · Köy Enstitüsü hatıratları · Mimar hatıratları · Sanatçı hatıratları · Savaş hatıratları · Sinema ve sanat odaklı hatıratlar · Suçlu hatıratları · Toplumsal cinsiyet konulu hatıratlar
+
+**Yöntem ve anlatı türlerinden bazıları şunlardır:**
+
+Başarı anlatıları · Biyografik anlatılar · Çocukluk anlatıları · Gezi hatıratları · Günlük biçimli hatırat · Nehir söyleşi · Olay anlatıları · Otobiyografik/biyografik anlatılar · Travma anlatıları
+
+## Kaynaklar
+
+Akar, Ş. K., & Karakoç, İ. (2004). Siyasî tarih kaynağı olarak hatırat ve gezi notları. *Türkiye Araştırmaları Literatür Dergisi*, 2(1), 383–421.
+
+Arıker, S. (2015). Çanakkale Cephesi ile ilgili Türkçe yayınlanmış günlük, hatırat ve mektupların bibliyografyası. *Akademik Sosyal Araştırmalar Dergisi*, 3(21), 528–538.
+
+Bancı, S. (2023). Kurmacayla tarihyazımı arasında Türkiye'de mimarların yaşam anlatıları. *Türkiye Araştırmaları Literatür Dergisi*, 21(41), 21–50.
+
+Çoruk, A. Ş. (2010). Tanzimattan Cumhuriyete gündelik hayatın tarihi açısından İstanbul hatıratları. *Türkiye Araştırmaları Literatür Dergisi*, 8(16), 489–522.
+
+Çukurova, B. (1999). Millî Mücadele anıları üzerine bir bibliyografya denemesi. *Atatürk Yolu Dergisi*, 6(23), 321–356.
+
+Durmuş, A. (2008). Hatıralardaki eğitim. *Türkiye Araştırmaları Literatür Dergisi*, 6(12), 553–576.
+
+Hanilçe, M. (2008). II. Meşrutiyet dönemine dair hatırat bibliyografyası denemesi. *bilig*, 47, 147–166.
+
+Karakoç, K. İ. (1998). *Anılar ve edebiyatçıların anıları bibliyografyası* [Yüksek lisans tezi, Fatih Üniversitesi].
+
+Tarakçı, B. (2018). Osmanlı modern dönem tasavvuf literatürü. *Türkiye Araştırmaları Literatür Dergisi*, 16(31–32), 47–86.
+
+Yenilmez, H. (2018). Cumhuriyet devri şeyhlerine dair hatırat-biyografi kitapları için bir bibliyografya denemesi. *Türkiye Araştırmaları Literatür Dergisi*, 16(31–32), 393–427.
+
+Yılmaz, H. (2020). Auteur sinema bağlamında Türkiye'de yönetmen sineması kitapları literatürü. *Türkiye Araştırmaları Literatür Dergisi*, 18(36), 643–670.
+
+Yılmaz, H. (2024). *Consumption, leisure activities, socialization processes, and spatial practices in Bağdat Avenue* [Doktora tezi, Marmara Üniversitesi].
+
+---
+
+## Düzeltme, Ekleme ve Öneriler
+
+Envanterde eksik ya da hatalı gördüğünüz bilgileri, eklenmesini önerdiğiniz eserleri veya genel görüşlerinizi aşağıdaki form aracılığıyla iletebilirsiniz.
+
+<div style="margin-top:1.5rem;">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_PLACEHOLDER/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
+</div>
