@@ -60,16 +60,16 @@ Başarı anlatıları · Biyografik anlatılar · Çocukluk anlatıları · Gezi
 Hatıra envanteri web sitesi ve projenin farklı aşamalarındaki gönüllü katkılarından dolayı aşağıdaki isimlere teşekkürlerimizi sunarız.
 
 Azra Alper  
-Başak  Kalyon
+Başak  Kalyon  
 Betül Karaaslan  
 Buse Dabanlı  
 Büşra İyibaş  
 Dilara Çetin  
 Duygu Dutlucalı  
 Ege Çakır  
-Elif  Konar 
-Eslem  M. Yıldırım
-Gizem  Muslukçu
+Elif  Konar  
+Eslem  M. Yıldırım  
+Gizem  Muslukçu  
 Hamide Yeşildal  
 Mehmet Mürsel Çiçek  
 Merve Güler  
