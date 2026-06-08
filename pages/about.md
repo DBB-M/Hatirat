@@ -59,5 +59,5 @@ Yılmaz, H. (2024). *Consumption, leisure activities, socialization processes, a
 Envanterde eksik ya da hatalı gördüğünüz bilgileri, eklenmesini önerdiğiniz eserleri veya genel görüşlerinizi aşağıdaki form aracılığıyla iletebilirsiniz.
 
 <div style="margin-top:1.5rem;">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_PLACEHOLDER/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-3Tsht_V3XGYMHZQRuoKA00TRAujD9B1Fq4FX6aQ5-mCZFw/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
 </div>
