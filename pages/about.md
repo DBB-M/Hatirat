@@ -4,19 +4,48 @@ layout: page-narrow
 permalink: /about.html
 ---
 
+<div style="background:#f2ead8;border:1px solid #d0b878;border-radius:8px;padding:1.5rem 2rem;margin-bottom:2rem;">
+
+<p style="font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#a08050;margin-bottom:.5rem;">Proje</p>
+
+<h2 style="font-family:'EB Garamond',Georgia,serif;font-size:1.15rem;font-weight:600;color:#2a1f0e;margin-bottom:1rem;line-height:1.4;">Osmanlı-Türkiye Kaynakları: Dijital Veri Tabanı ve Analiz Projesi (DBB-M-KAYNAK)</h2>
+
+<p><strong>ÖZ</strong></p>
+
+<p>Bu proje, Marmara Üniversitesi Dijital Beşeri Bilimler Merkezi içerisinde Osmanlı ve Türkiye tarihine dair seçilmiş eser türleri üzerinden veri tabanı oluşturma ve dijital analiz uygulamaları gerçekleştirme amacını taşımaktadır. Proje, seçilmiş kaynak gruplarını (tevârih, seyahatname, hatırât) dikkate alarak şimdilik üç alt proje şeklinde hayata geçirilmiştir. Kaynak gruplarının kapsadığı eserlerin titizlikle listelenmesi, verilerinin sistematik biçimde işlenmesi ve her kaynak grubundan seçilecek metinlerde farklı dijital yöntemlerin uygulanması amacını kapsayan bu çalışma ileri araştırmalar için bir altyapı sunacaktır. Proje sürecinde kazanılacak disiplinlerarası tecrübeler ve elde edilecek analiz sonuçları yayın haline getirilerek, tarih disiplini yanında sosyoloji, edebiyat ve siyaset bilimi gibi farklı disiplinlerden araştırmacılara yeni perspektifler kazandıracaktır.</p>
+
+<p><strong>GEREKÇE ve AMAÇ</strong></p>
+
+<p>Dijital Beşeri Bilimler'in temeli büyük veri olduğundan veri kaynaklarını ulaşılabilir ve işlenebilir hale getirmek zorunluluğu bulunmaktadır. Bu projede, arşivler ve yazma eserler gibi tarihi verilerin kaynak olarak kullanılması, bu verilerin bir veri tabanı çerçevesinde külliyat halinde derlenip erişilebilir kılınması ve ileri dijital analizlere hazır hale getirilerek analiz edilmesi amaçlanmıştır.</p>
+
+<p>Proje için ilk aşamada üç temel kaynak türü seçilmiştir: <strong>Tevârih</strong> (Osmanlı devlet ve toplum yapısına dair zengin veri kaynağı), <strong>Seyahatnameler</strong> (sosyal ve kültürel tarih, algı ve söylem çalışmaları için önemli kaynaklar) ve <strong>Hatırât</strong> (Osmanlı'nın modern dönemi ve Cumhuriyet dönemi tarihi ve toplumsal hayatına dair çeşitli veriler).</p>
+
+<p><strong>EKİP</strong></p>
+
+<p><em>Danışma Kurulu:</em> Fehmi Yılmaz, Nicole Kançal-Ferrari, Murat Can Ganiz, Zübeyir Nişancı, Sümeyye Akça</p>
+
+<p><em>Yürütme Kurulu ve Araştırmacılar:</em> Yunus Uğur (Yönetici), Ayşegül Çimen, Serpil Özcan, Özge Eda Kaya, Rümeysanur Erikli Doğan, Ahmet Tekin, Tuba Nur Saraçoğlu, Taha Yasin Tan, Ahmet Baran Demir, Necmettin Semiz, Zeynep Etka Özdemir</p>
+
+<p><em>Alt Projeler:</em><br>
+(DBB-M-Tevârih) Osmanlı Tevârih Eserleri — Yürütücü: Ayşegül Çimen<br>
+(DBB-M-Seyahatname) Osmanlı Coğrafyasında Seyahatnameler — Yürütücüler: Serpil Özcan, Özge Eda Kaya<br>
+(DBB-M-Hatırât) Osmanlı'dan Cumhuriyete Hatırât Eserleri — Yürütücü: Rümeysanur Doğan</p>
+
+</div>
+
+---
+
 ## Hatırat Envanteri Hakkında
 
 Hatıratlar, kişisel tanıklıklar üzerinden geçmişe bakma imkânı sunar. Ancak bu metinler yalnızca bireysel hafızayı değil, aynı zamanda dönemin kurumlarını, gündelik hayatını, meslek dünyasını, toplumsal ilişkilerini ve kültürel dönüşümlerini de görünür kılar.
 
 Bu dijital envanter, hatıratları tek tek bibliyografik kayıtlar olmaktan çıkarıp karşılaştırılabilir, aranabilir ve analiz edilebilir bir veri alanına dönüştürmeyi hedefler. Böylece kullanıcılar hem belirli bir esere ulaşabilir hem de daha geniş tematik eğilimleri takip edebilir.
 
-Hatırat Envanteri, Türkiye'de yayımlanmış hatırat kitaplarını araştırmacılar, öğrenciler ve meraklı okurlar için daha erişilebilir hale getirmeyi amaçlayan dijital bir envanter çalışmasıdır. Platform, farklı temalara ait hatıratları tek bir yerde görmeyi, karşılaştırmayı ve ön analiz yapmayı kolaylaştırır. Bu çalışma özellikle hatıratları tarih, edebiyat, sosyoloji, mimarlık, sinema, eğitim, toplumsal cinsiyet ve kültürel çalışmalar gibi farklı alanlarda kaynak olarak kullanmak isteyenler için tasarlanmıştır. Kullanıcılar envanter üzerinden hatıratları konu, kişi, kurum, dönem, yayım bilgisi ve anlatı türü gibi ölçütlerle inceleyebilir.
+Hatırat Envanteri, Türkiye'de yayımlanmış hatırat kitaplarını araştırmacılar, öğrenciler ve meraklı okurlar için daha erişilebilir hale getirmeyi amaçlayan dijital bir envanter çalışmasıdır. Platform, farklı temalara ait hatıratları tek bir yerde görmeyi, karşılaştırmayı ve ön analiz yapmayı kolaylaştırır. Bu çalışma özellikle hatıratları tarih, edebiyat, sosyoloji, mimarlık, sinema, eğitim, toplumsal cinsiyet ve kültürel çalışmalar gibi farklı alanlarda kaynak olarak kullanmak isteyenler için tasarlanmıştır.
 
 ## Envanter Nasıl Hazırlandı?
 
-Envanterin temelini, son yüzyılda kitap olarak yayımlanmış hatıratlara ilişkin akademik bibliyografya çalışmaları oluşturur. Bu çalışmalarda yer alan bibliyografik listeler veri setine dönüştürülmüş; her eser için yazar adı, eser adı, yayım yılı, yayım yeri, yayınevi ve ilgili kaynak bilgileri kaydedilmiştir. Bibliyografik bilgilere ek olarak, araştırmacıların tematik örüntüleri daha kolay görebilmesi için "önemli kişiler" ve "önemli kurumlar" alanları da eklenmiştir. Böylece belirli kişiler, kurumlar, meslek grupları, tarihsel olaylar veya toplumsal konular etrafında oluşan hatırat kümelerini izlemek mümkün hale gelmiştir.
-
-Hatıratlar iki ana eksende sınıflandırılmıştır: konu ve anlatı/yöntem türü. Konuya göre sınıflandırmada akademik bibliyografyalarda öne çıkan alanlar ile Yılmaz'ın (2024) doktora çalışmasında kullandığı tasniften yararlanılmıştır.
+Envanterin temelini, son yüzyılda kitap olarak yayımlanmış hatıratlara ilişkin akademik bibliyografya çalışmaları oluşturur. Bu çalışmalarda yer alan bibliyografik listeler veri setine dönüştürülmüş; her eser için yazar adı, eser adı, yayım yılı, yayım yeri, yayınevi ve ilgili kaynak bilgileri kaydedilmiştir. Bibliyografik bilgilere ek olarak, araştırmacıların tematik örüntüleri daha kolay görebilmesi için "önemli kişiler" ve "önemli kurumlar" alanları da eklenmiştir.
 
 **Konu başlıklarından bazıları şunlardır:**
 
