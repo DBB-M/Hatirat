@@ -55,6 +55,37 @@ Aile odaklı hatıratlar · Azınlıkların yaşamını konu edinen hatıratlar 
 
 Başarı anlatıları · Biyografik anlatılar · Çocukluk anlatıları · Gezi hatıratları · Günlük biçimli hatırat · Nehir söyleşi · Olay anlatıları · Otobiyografik/biyografik anlatılar · Travma anlatıları
 
+**Ekip ve teşekkür:**
+
+Hatıra envanteri web sitesi ve projenin farklı aşamalarındaki gönüllü katkılarından dolayı aşağıdaki isimlere teşekkürlerimizi sunarız.
+
+Azra Alper  
+Başak  Kalyon
+Betül Karaaslan  
+Buse Dabanlı  
+Büşra İyibaş  
+Dilara Çetin  
+Duygu Dutlucalı  
+Ege Çakır  
+Elif  Konar 
+Eslem  M. Yıldırım
+Gizem  Muslukçu
+Hamide Yeşildal  
+Mehmet Mürsel Çiçek  
+Merve Güler  
+Merve Poyraz  
+Mustafa Yılmaz  
+Rabia Avran  
+Rumeysanur Erikli Doğan  
+Rümeysa Yılmaz  
+Sevdenur Kartal  
+Şehide Arman  
+Şeyma Kasapoğlu  
+Şeymanur  
+Şükran Büke Dülger  
+Zehra Dovan
+
+
 ## Kaynaklar
 
 Akar, Ş. K., & Karakoç, İ. (2004). Siyasî tarih kaynağı olarak hatırat ve gezi notları. *Türkiye Araştırmaları Literatür Dergisi*, 2(1), 383–421.
