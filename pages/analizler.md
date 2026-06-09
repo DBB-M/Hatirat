@@ -52,7 +52,7 @@ custom-foot: js/analizler-js.html
 
   <div class="tab-pane fade" id="zaman">
     <div class="card border-0 shadow-sm p-3">
-      <h5 style="font-family:'EB Garamond',serif;color:#2a7f8c;">Yıllara Göre Hatırat Üretimi (1854–2024)</h5>
+      <h5 style="font-family:'EB Garamond',serif;color:#2a7f8c;">Yıllara Göre Hatırat Üretimi (1737–2020)</h5>
       <canvas id="chartZaman"></canvas>
     </div>
   </div>
