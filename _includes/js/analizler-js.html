@@ -145,14 +145,14 @@ rawItems.forEach(function(item) {
     var d = item.date;
     if (!d) return;
     var y = parseInt(d);
-    if (y >= 1854 && y <= 2024) {
+    if (y >= 1737 && y <= 2020) {
         yilFreq[y] = (yilFreq[y] || 0) + 1;
     }
 });
 
 // 10 yıllık dilimler
 var dilimFreq = {};
-for (var y = 1850; y <= 2020; y += 10) {
+for (var y = 1730; y <= 2010; y += 10) {
     var label = y + "–" + (y+9);
     dilimFreq[label] = 0;
 }
