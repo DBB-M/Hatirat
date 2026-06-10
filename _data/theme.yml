@@ -9,7 +9,7 @@ featured-image:
 ##########
 # NAVBAR
 #
-navbar-color: navy
+navbar-color: navbar-dark
 navbar-background: custom
 ##########
 # BROWSE
