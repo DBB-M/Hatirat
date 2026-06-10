@@ -221,10 +221,11 @@ function drawNetwork(containerId, nodes, links, nodeColor) {
             .on("start", function(event,d){ if (!event.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
             .on("drag", function(event,d){ d.fx=event.x; d.fy=event.y; })
             .on("end", function(event,d){ if (!event.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+    node.append("title").text(function(d){ return d.id + " (" + (d.weight||1) + ")"; });
 
     var label = svg.append("g")
         .selectAll("text")
-        .data(nodes.filter(function(d){ return (d.weight||1) > 1; }))
+        .data(nodes)
         .join("text")
         .attr("font-size", "9px")
         .attr("fill", "#2a1f0e")
