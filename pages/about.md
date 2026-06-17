@@ -81,7 +81,7 @@ Rümeysa Yılmaz
 Sevdenur Kartal  
 Şehide Arman  
 Şeyma Kasapoğlu  
-Şeymanur  
+Şeymanur Aydınhan
 Şükran Büke Dülger  
 Zehra Dovan
 
