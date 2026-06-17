@@ -95,3 +95,10 @@ kramdown:
 lib-assets: /Hatirat/assets/lib
 object-location: 
 image-thumb:
+
+##########
+# ORGANIZATION
+#
+organization-name: "Marmara Üniversitesi Dijital Beşeri Bilimler Araştırma Merkezi"
+organization-link: https://github.com/DBB-M
+organization-logo-banner: /assets/img/dbb-logo.png
