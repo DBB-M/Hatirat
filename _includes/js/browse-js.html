@@ -70,21 +70,23 @@ function uniqueValues(arr, field, separator) {
     return Array.from(set).sort();
 }
 
-function populateSelect(selectId, values) {
-    var select = document.getElementById(selectId);
-    if (!select) return;
+function populateSelect(containerId, values) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
     values.forEach(function(v) {
-        var opt = document.createElement("option");
-        opt.value = v;
-        opt.textContent = v;
-        select.appendChild(opt);
+        var id = containerId + "-" + v.replace(/[^a-zA-Z0-9]/g, "");
+        var div = document.createElement("div");
+        div.className = "form-check";
+        div.innerHTML = '<input class="form-check-input filter-checkbox" type="checkbox" value="' + v.replace(/"/g,'&quot;') + '" id="' + id + '" data-group="' + containerId + '">' +
+            '<label class="form-check-label" for="' + id + '">' + v + '</label>';
+        container.appendChild(div);
     });
 }
 
-function getSelectedValues(selectId) {
-    var el = document.getElementById(selectId);
-    if (!el) return [];
-    return Array.from(el.selectedOptions).map(function(o){ return o.value; });
+function getSelectedValues(containerId) {
+    var container = document.getElementById(containerId);
+    if (!container) return [];
+    return Array.from(container.querySelectorAll('input[type="checkbox"]:checked')).map(function(cb){ return cb.value; });
 }
 
 // ── TEMEL FİLTRE FONKSİYONU (metin + dropdown birlikte) ───────────────────
