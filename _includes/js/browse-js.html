@@ -55,25 +55,86 @@ function makeCard(obj) {
     return card;
 }
 
+// ── DROPDOWN FİLTRE YARDIMCI FONKSİYONLARI ─────────────────────────────────
+
+function uniqueValues(arr, field, separator) {
+    var set = new Set();
+    arr.forEach(function(item) {
+        var val = item[field];
+        if (!val) return;
+        val.split(separator).forEach(function(v) {
+            v = v.trim();
+            if (v) set.add(v);
+        });
+    });
+    return Array.from(set).sort();
+}
+
+function populateSelect(selectId, values) {
+    var select = document.getElementById(selectId);
+    if (!select) return;
+    values.forEach(function(v) {
+        var opt = document.createElement("option");
+        opt.value = v;
+        opt.textContent = v;
+        select.appendChild(opt);
+    });
+}
+
+function getSelectedValues(selectId) {
+    var el = document.getElementById(selectId);
+    if (!el) return [];
+    return Array.from(el.selectedOptions).map(function(o){ return o.value; });
+}
+
+// ── TEMEL FİLTRE FONKSİYONU (metin + dropdown birlikte) ───────────────────
+
 function filterItems(arr, q) {
     loadingIcon.classList.remove("d-none");
-    var filteredItems = [];
-    if (q == "") {
-        filteredItems = arr;
-    } else {
-        q = q.trim().toUpperCase();
-        for (var i = 0, len = arr.length; i < len; i++) {
+
+    var subjects = getSelectedValues("filterSubject");
+    var yontemler = getSelectedValues("filterYontem");
+    var periods = getSelectedValues("filterPeriod");
+
+    var filteredItems = arr.filter(function(item) {
+        // metin araması
+        if (q !== "") {
             var val = "";
-            for (var k in arr[i]) { if (k != "img") { val += arr[i][k] + " "; } }
-            if (val.toUpperCase().indexOf(q) != -1) { filteredItems.push(arr[i]); }
+            for (var k in item) { if (k != "img") { val += item[k] + " "; } }
+            if (val.toUpperCase().indexOf(q.toUpperCase()) === -1) return false;
         }
-    }
+        // tür/alt tür filtresi
+        if (subjects.length > 0) {
+            var itemSubjects = ((item.subject||"") + ";" + (item.subject_2||"")).split(";").map(function(s){return s.trim();});
+            if (!subjects.some(function(s){ return itemSubjects.indexOf(s) !== -1; })) return false;
+        }
+        // anlatı biçimi filtresi
+        if (yontemler.length > 0) {
+            var itemYontem = (item.yontem||"").split(";").map(function(s){return s.trim();});
+            if (!yontemler.some(function(s){ return itemYontem.indexOf(s) !== -1; })) return false;
+        }
+        // dönem filtresi
+        if (periods.length > 0) {
+            var itemPeriod = (item.period||"").split(";").map(function(s){return s.trim();});
+            if (!periods.some(function(s){ return itemPeriod.indexOf(s) !== -1; })) return false;
+        }
+        return true;
+    });
+
     document.querySelector("#numberOf").innerHTML = filteredItems.length + " / " + items.length + " eser";
     var cards = "";
     for (var i = 0, len = filteredItems.length; i < len; i++) { cards += makeCard(filteredItems[i]); }
     browseItemsDiv.innerHTML = cards;
     if (q != "") { filterTextBox.focus(); }
     loadingIcon.classList.add("d-none");
+}
+
+function clearAllFilters() {
+    ["filterSubject","filterYontem","filterPeriod"].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.selectedIndex = -1;
+    });
+    filterItems(items, filterTextBox.value);
 }
 
 function shuffle(array) {
@@ -88,6 +149,16 @@ var loadingIcon = document.querySelector("#loadingIcon");
 var filterTextBox = document.querySelector('#filterTextBox');
 var filterButton = document.querySelector("#filterButton");
 var browseItemsDiv = document.querySelector("#browseItems");
+
+// dropdown'ları doldur
+populateSelect("filterSubject", uniqueValues(items, "subject", ";").concat(uniqueValues(items, "subject_2", ";")).filter(function(v,i,a){ return a.indexOf(v)===i; }).sort());
+populateSelect("filterYontem", uniqueValues(items, "yontem", ";"));
+populateSelect("filterPeriod", uniqueValues(items, "period", ";"));
+
+["filterSubject","filterYontem","filterPeriod"].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("change", function() { filterItems(items, filterTextBox.value); });
+});
 
 var query = "";
 if (window.location.hash) {
