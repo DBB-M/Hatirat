@@ -11,19 +11,19 @@ custom-foot: js/browse-js.html
       <h6 style="color:#7a5020;font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:.78rem;margin-bottom:.8rem;">Filtreler</h6>
 
       <div class="mb-3">
-        <label class="form-label small fw-bold">Tür / Alt Tür</label>
-        <select id="filterSubject" class="form-select form-select-sm" multiple size="6"></select>
-      </div>
+  <label class="form-label small fw-bold">Tür / Alt Tür</label>
+  <div id="filterSubject" class="filter-checkbox-list" style="max-height:180px;overflow-y:auto;border:1px solid #ddd;border-radius:4px;padding:.5rem;font-size:.85rem;"></div>
+</div>
 
-      <div class="mb-3">
-        <label class="form-label small fw-bold">Anlatı Biçimi</label>
-        <select id="filterYontem" class="form-select form-select-sm" multiple size="5"></select>
-      </div>
+<div class="mb-3">
+  <label class="form-label small fw-bold">Anlatı Biçimi</label>
+  <div id="filterYontem" class="filter-checkbox-list" style="max-height:150px;overflow-y:auto;border:1px solid #ddd;border-radius:4px;padding:.5rem;font-size:.85rem;"></div>
+</div>
 
-      <div class="mb-3">
-        <label class="form-label small fw-bold">Dönem</label>
-        <select id="filterPeriod" class="form-select form-select-sm" multiple size="6"></select>
-      </div>
+<div class="mb-3">
+  <label class="form-label small fw-bold">Dönem</label>
+  <div id="filterPeriod" class="filter-checkbox-list" style="max-height:180px;overflow-y:auto;border:1px solid #ddd;border-radius:4px;padding:.5rem;font-size:.85rem;"></div>
+</div>
 
       <button class="btn btn-sm btn-outline-secondary w-100" onclick="clearAllFilters()">Filtreleri Temizle</button>
     </div>
