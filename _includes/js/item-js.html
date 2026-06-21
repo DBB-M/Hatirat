@@ -149,7 +149,7 @@ function displayItem(record, prev_id, next_id, compound_object) {
             var val = item[f];
 
             if (browseFields.indexOf(f) !== -1) {
-    var separator = (f === "important_names" || f === "important_institutions") ? "," : ";";
+    var separator = (f === "important_names" || f === "important_institutions") ? /[,;]/ : ";";
     var parts = val.split(separator);
     var linked = "";
     for (var p = 0; p < parts.length; p++) {
